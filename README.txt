@@ -1,1 +1,1 @@
-# Projet DL - VAEs
+# Project VAEs
