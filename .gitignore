@@ -15,6 +15,7 @@ sandbox.py
 # Jupyter Notebooks
 .ipynb_checkpoints
 **/*.ipynb
+*.pyc
 
 # Large files
 *.png
@@ -22,6 +23,7 @@ sandbox.py
 # Data files
 data
 saved_models
+images
 # *.csv
 *.parquet
 yolov3*
