@@ -5,7 +5,6 @@ different app modes.
 
 """
 
-# ahah
 import os
 
 import streamlit as st
@@ -19,6 +18,11 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import LinearRegression
 from torchvision.datasets import MNIST
 from torchvision.transforms import ToTensor
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from torch.utils.data import DataLoader
+import time
 
 from viz import mnist_like_viz, training_curves
 from utils import poly, paths
@@ -36,25 +40,25 @@ def main():
     -------
     None
     """
-    st.title("Some data manipulations")
+    st.title("VAEs")
 
     home_data = get_data()
 
     app_mode = st.sidebar.selectbox(
         "Choose the app mode",
         [
-            "Show instructions",
-            "Home data regression",
+            "What is a VAE?",
+            "Hands on VAE",
             "Sinus regression",
             "Show MNIST",
             "Deep Learning",
         ],
     )  # , "Show the source code"])
-    if app_mode == "Show instructions":
+    if app_mode == "What is a VAE?":
         st.write("To continue select a mode in the selection box to the left.")
     # elif app_mode == "Show the source code":
     #     st.code(get_file_content_as_string("./app.py"))
-    elif app_mode == "Home data regression":
+    elif app_mode == "Hands on VAE":
         regression(home_data)
     elif app_mode == "Sinus regression":
         sinus()
